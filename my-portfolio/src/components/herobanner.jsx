@@ -137,7 +137,7 @@ export default function HeroBanner() {
     <Box
       sx={{
         minHeight: "100vh",
-        backgroundImage: `url(/HeroBanner.jpg)`,
+        backgroundImage: `url(/Herobanner.jpg)`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         display: "flex",
