@@ -45,24 +45,7 @@ export default function Navbar() {
         </Typography>
       </Box>
       <Divider />
-      <Box sx={{ display: "flex", flexDirection: "column", mt: 2, gap: 1 }}>
-        {navItems.map((item) => (
-          <Button
-            key={item.name}
-            component={Link}
-            href={item.href}
-            sx={{
-              justifyContent: "flex-start",
-              fontWeight: 600,
-              color: "black",
-              textTransform: "none",
-              "&:hover": { color: "primary.main" },
-            }}
-          >
-            {item.name}
-          </Button>
-        ))}
-      </Box>
+    
     </Box>
   );
 
@@ -86,39 +69,14 @@ export default function Navbar() {
             </Box>
 
             {/* Desktop Links */}
-            <Box sx={{ display: { xs: "none", md: "flex" }, gap: 3 }}>
-              {navItems.map((item) => (
-                <Button
-                  key={item.name}
-                  component={Link}
-                  href={item.href}
-                  sx={{ color: "white", fontWeight: 600, textTransform: "none" }}
-                >
-                  {item.name}
-                </Button>
-              ))}
-            </Box>
+         
 
-            {/* Mobile Menu */}
-            <IconButton
-              color="inherit"
-              onClick={handleDrawerToggle}
-              sx={{ display: { md: "none" } }}
-            >
-              <MenuIcon />
-            </IconButton>
+        
           </Toolbar>
         </Container>
       </AppBar>
 
-      <Drawer
-        anchor="right"
-        open={mobileOpen}
-        onClose={handleDrawerToggle}
-        sx={{ display: { xs: "block", md: "none" } }}
-      >
-        {drawer}
-      </Drawer>
+      
     </>
   );
 }

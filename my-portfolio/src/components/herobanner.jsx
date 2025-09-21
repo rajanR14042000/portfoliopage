@@ -16,6 +16,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import DownloadIcon from "@mui/icons-material/Download";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { Phone } from "@mui/icons-material";
 
 // Bubble component for the floating animation
 const Bubble = ({ size, left, delay, duration }) => {
@@ -113,7 +114,13 @@ export default function HeroBanner() {
       contactSection.scrollIntoView({ behavior: "smooth" });
     }
   };
-
+const handleWhatsAppClick = () => {
+    // Replace with your WhatsApp number (without + or 0, use country code)
+    const phoneNumber = "916383367739"; 
+    const message = "Hello, I’d like to know more about your services!";
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  };
   // Generate bubbles for the background
   const generateBubbles = () => {
     const bubbles = [];
@@ -319,55 +326,35 @@ export default function HeroBanner() {
                   justifyContent: isTablet ? "center" : "flex-start" 
                 }}
               >
-                <motion.div
-                  variants={buttonVariant}
-                  whileHover="hover"
-                  whileTap="tap"
-                >
-                  <Button
-                    variant="contained"
-                    size={isMobile ? "medium" : "large"}
-                    onClick={handleContactClick}
-                    sx={{
-                      backgroundColor: "#2196f3",
-                      px: isMobile ? 3 : 4,
-                      py: 1,
-                      fontSize: isMobile ? "1rem" : "1.1rem",
-                      fontWeight: 600,
-                      "&:hover": {
-                        backgroundColor: "#1976d2",
-                      },
-                    }}
-                  >
-                    Contact Me
-                  </Button>
-                </motion.div>
+             
                 
-                <motion.div
-                  variants={buttonVariant}
-                  whileHover="hover"
-                  whileTap="tap"
-                >
-                  <Button
-                    variant="outlined"
-                    size={isMobile ? "medium" : "large"}
-                    startIcon={<DownloadIcon />}
-                    sx={{
-                      color: "white",
-                      borderColor: "white",
-                      px: isMobile ? 3 : 4,
-                      py: 1,
-                      fontSize: isMobile ? "1rem" : "1.1rem",
-                      fontWeight: 600,
-                      "&:hover": {
-                        borderColor: "#2196f3",
-                        backgroundColor: "rgba(33, 150, 243, 0.1)",
-                      },
-                    }}
-                  >
-                    Resume
-                  </Button>
-                </motion.div>
+               <motion.div
+  variants={buttonVariant}
+  whileHover="hover"
+  whileTap="tap"
+>
+  <a href="/Rajan_Resume (4).pdf" download style={{ textDecoration: "none" }}>
+    <Button
+      variant="outlined"
+      size={isMobile ? "medium" : "large"}
+      startIcon={<DownloadIcon />}
+      sx={{
+        color: "white",
+        borderColor: "white",
+        px: isMobile ? 3 : 4,
+        py: 1,
+        fontSize: isMobile ? "1rem" : "1.1rem",
+        fontWeight: 600,
+        "&:hover": {
+          borderColor: "#2196f3",
+          backgroundColor: "rgba(33, 150, 243, 0.1)",
+        },
+      }}
+    >
+      Resume
+    </Button>
+  </a>
+</motion.div>
               </motion.div>
 
               {/* Social Icons */}
@@ -397,61 +384,95 @@ export default function HeroBanner() {
                         backgroundColor: "rgba(33, 150, 243, 0.2)",
                       },
                     }}
-                    href="https://github.com"
+                    href="https://github.com/rajanR14042000"
                     target="_blank"
                   >
                     <GitHubIcon sx={{ color: "white", fontSize: isMobile ? "1.5rem" : "inherit" }} />
                   </Button>
                 </motion.div>
                 
-                <motion.div
-                  variants={buttonVariant}
-                  whileHover={{ scale: 1.2, y: -5 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Button
-                    variant="contained"
-                    sx={{
-                      minWidth: "auto",
-                      width: isMobile ? "48px" : "56px",
-                      height: isMobile ? "48px" : "56px",
-                      borderRadius: "50%",
-                      backgroundColor: "rgba(255, 255, 255, 0.1)",
-                      backdropFilter: "blur(10px)",
-                      "&:hover": {
-                        backgroundColor: "rgba(33, 150, 243, 0.2)",
-                      },
-                    }}
-                    href="https://linkedin.com"
-                    target="_blank"
-                  >
-                    <LinkedInIcon sx={{ color: "white", fontSize: isMobile ? "1.5rem" : "inherit" }} />
-                  </Button>
-                </motion.div>
-                
-                <motion.div
-                  variants={buttonVariant}
-                  whileHover={{ scale: 1.2, y: -5 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Button
-                    variant="contained"
-                    sx={{
-                      minWidth: "auto",
-                      width: isMobile ? "48px" : "56px",
-                      height: isMobile ? "48px" : "56px",
-                      borderRadius: "50%",
-                      backgroundColor: "rgba(255, 255, 255, 0.1)",
-                      backdropFilter: "blur(10px)",
-                      "&:hover": {
-                        backgroundColor: "rgba(33, 150, 243, 0.2)",
-                      },
-                    }}
-                    href="mailto:rajan@example.com"
-                  >
-                    <EmailIcon sx={{ color: "white", fontSize: isMobile ? "1.5rem" : "inherit" }} />
-                  </Button>
-                </motion.div>
+               <motion.div
+  variants={buttonVariant}
+  whileHover={{ scale: 1.2, y: -5 }}
+  whileTap={{ scale: 0.95 }}
+>
+  <Button
+    variant="contained"
+    sx={{
+      minWidth: "auto",
+      width: isMobile ? "48px" : "56px",
+      height: isMobile ? "48px" : "56px",
+      borderRadius: "50%",
+      backgroundColor: "rgba(255, 255, 255, 0.1)",
+      backdropFilter: "blur(10px)",
+      "&:hover": {
+        backgroundColor: "rgba(33, 150, 243, 0.2)",
+      },
+    }}
+    href="https://linkedin.com/in/rajan-ravichandran-developer"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <LinkedInIcon sx={{ color: "white", fontSize: isMobile ? "1.5rem" : "inherit" }} />
+  </Button>
+</motion.div>
+
+<motion.div
+  variants={buttonVariant}
+  whileHover={{ scale: 1.2, y: -5 }}
+  whileTap={{ scale: 0.95 }}
+>
+  <Box 
+    component="a" 
+    href="mailto:rajanravi144@gmail.com" 
+    sx={{ 
+      textDecoration: 'none',
+      display: 'block'
+    }}
+    onClick={(e) => {
+      // Fallback handling in case the href doesn't trigger
+      e.preventDefault();
+      window.location.href = "mailto:rajanravi144@gmail.com";
+    }}
+  >
+    <Button
+      variant="contained"
+      sx={{
+        minWidth: "auto",
+        width: isMobile ? "48px" : "56px",
+        height: isMobile ? "48px" : "56px",
+        borderRadius: "50%",
+        backgroundColor: "rgba(255, 255, 255, 0.1)",
+        backdropFilter: "blur(10px)",
+        "&:hover": {
+          backgroundColor: "rgba(33, 150, 243, 0.2)",
+        },
+      }}
+    >
+      <EmailIcon sx={{ color: "white", fontSize: isMobile ? "1.5rem" : "inherit" }} />
+    </Button>
+  </Box>
+</motion.div>
+<motion.div>
+      <Button
+        variant="contained"
+        onClick={handleWhatsAppClick}
+        sx={{
+          minWidth: "auto",
+          width: isMobile ? "48px" : "56px",
+          height: isMobile ? "48px" : "56px",
+          borderRadius: "50%",
+          backgroundColor: "rgba(255, 255, 255, 0.1)",
+          backdropFilter: "blur(10px)",
+          "&:hover": {
+            backgroundColor: "rgba(33, 150, 243, 0.2)",
+          },
+        }}
+      >
+        <Phone sx={{ color: "white", fontSize: isMobile ? "1.5rem" : "inherit" }} />
+      </Button>
+    </motion.div>
+
               </motion.div>
             </motion.div>
           </Grid>
